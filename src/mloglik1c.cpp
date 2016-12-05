@@ -19,7 +19,7 @@ double mloglik1c(NumericVector jtms, double TT, Function nu,
   // Rcpp::Rcout<<res<<std::endl;
   res += as<double>(Inu(TT));
   // Rcpp::Rcout<<res<<std::endl;
-  for(int j=0;j<nj;j++)s += 1-exp(-gcoef[1]*(1-jtms[j]));
+  for(int j=0;j<nj;j++)s += 1-exp(-gcoef[1]*(TT-jtms[j]));
   s *= gcoef[0]/gcoef[1];
   // Rcpp::Rcout<<"s="<<s<<std::endl;
   res += s;

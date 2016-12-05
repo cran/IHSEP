@@ -11,7 +11,8 @@ for event times \code{jtms} on interval \eqn{[0,TT]}.
 }
 \usage{
 mloglik1b(jtms, TT = max(jtms), nu, g,
-          Ig=function(x)sapply(x,function(y)integrate(g,0,y)$value),
+          Ig=function(x)sapply(x,function(y)integrate(g,0,y,
+               rel.tol=1e-12,abs.tol=1e-12,subdivisions=1000)$value),
           Inu=function(x)sapply(x,function(y)integrate(nu,0,y)$value))
 }
 \arguments{

@@ -1,10 +1,10 @@
-f821c78b012977fd4f134dd3b22652d2 *DESCRIPTION
+baca2e4eb47dea880e42e75be7cb5d7c *DESCRIPTION
 6bf26f611f08a337023e1d8db0935bfb *NAMESPACE
 371fc3b4d19a2dbc360ff757ad3781bc *R/RcppExports.R
 648703ec3008b771c0df574a0b46e358 *R/mint.R
 55f31ccc1dc1bc4708d8608ebb540b81 *R/mloglik0.R
-16325af7e7573dc2c691917733f443bc *R/mloglik1a.R
-20e35af08a6df59f9464ac4029d6a9f0 *R/mloglik1b.R
+1a4202aabd7faeb23f8defc8d3e93b8e *R/mloglik1a.R
+9df21f79628bbec7fffff8c00631d5cb *R/mloglik1b.R
 434004d101dacab9b259a02415217a5b *R/sepp.resid.R
 090b5ab6aa65fabaa26c7d7bfa87c2c3 *R/simHawkes0.R
 ca8417c319f98525de5b133b0a9f5a79 *R/simHawkes1.R
@@ -18,8 +18,8 @@ f110681a43f8cbe09946df7f63417f1e *man/asep.Rd
 e6361f57f9b66708605af2afe495d8d2 *man/h.fn.Rd
 556d13cc7bb4a6d1b4cc003967d6c991 *man/h.fn.exp.Rd
 eb0facf0f210f4d61c9454599b183875 *man/mloglik0.Rd
-3fb3068c4827bcf964b32ecb9196632c *man/mloglik1a.Rd
-6e32840bf1e70dcddfef69edca7bd755 *man/mloglik1b.Rd
+0cd659e74cdccc23043cf63debcb5ae8 *man/mloglik1a.Rd
+75fc515ec183e852e2d80adda902896f *man/mloglik1b.Rd
 945aded970cdc326ca4e7276311cd3f5 *man/mloglik1c.Rd
 eedbc85ae342d841bc809bb76deb2c17 *man/mloglik1d.Rd
 cf7d4c627d8ef9b7115131d0429390e5 *man/mloglik1e.Rd
@@ -30,6 +30,6 @@ d07ba61d08a2bf39c3b005f365c443f3 *man/simPois.Rd
 6b5981487b1a197d48a740a53a693552 *man/simPois0.Rd
 accb1618667195c6d8f4f9af65268681 *src/RcppExports.cpp
 6f8bb023e0c9772aa6c0d86bb491783d *src/mloglik.c
-3e84165dc67557be7337631739b6b621 *src/mloglik1c.cpp
-5ac4d9382ef649af602d80f4ee4938c3 *src/mloglik1d.cpp
-e9da16b903ca22bbd769a59f775599d5 *src/mloglik1e.cpp
+7387862b929c91e0e08a46c4ee852dd1 *src/mloglik1c.cpp
+5dc7c98f4e3f3aca74e3f4b38ecf00b5 *src/mloglik1d.cpp
+c8d025b7284f0efbbef994200dde1443 *src/mloglik1e.cpp

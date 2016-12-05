@@ -28,7 +28,7 @@ double mloglik1d(NumericVector jtms, double TT, Function nu,
   for(k=0;k<d;k++){
     s=0.0;
     for(j=0;j<nj;j++){
-      s += (1-exp(-gcoef[k+d]*(1-jtms[j])))*gcoef[k]/gcoef[k+d];
+      s += (1-exp(-gcoef[k+d]*(TT-jtms[j])))*gcoef[k]/gcoef[k+d];
     }
     // s*=gcoef[k]/gcoef[k+d];
     // Rcpp::Rcout<<"s="<<s<<std::endl;

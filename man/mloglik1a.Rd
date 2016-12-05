@@ -12,7 +12,7 @@ for event times \code{jtms} on interval \eqn{[0,TT]}.
 \usage{
 mloglik1a(jtms, TT = max(jtms), nu, g,
           Ig = function(x) sapply(x, function(y) integrate(g, 0, y)$value),
-          tol.abs = 1e-08, tol.rel = 1e-08, limit = 1000
+          tol.abs = 1e-12, tol.rel = 1e-12, limit = 1000
           )
 
 }
