@@ -2,6 +2,6 @@ useDynLib(IHSEP)
 importFrom(Rcpp,sourceCpp)
 exportPattern("^[[:alpha:]]+")
 importFrom("stats", "fft", "integrate", "optimize", "rbinom", "rexp",
-           "rpois", "runif")
+           "rpois", "runif", "pexp")
 importFrom("utils", "head")
 importFrom(lpint,lpint)

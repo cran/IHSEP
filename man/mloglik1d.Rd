@@ -6,7 +6,7 @@ Minus loglikelihood of an IHSEP model
 }
 \description{
 Calculates the minus loglikelihood of an IHSEP model with given
-baseline inensity function \eqn{\nu} and excitation function
+baseline intensity function \eqn{\nu} and excitation function
 \eqn{g(x)=\sum a_i exp(-b_i x)} for event times \code{jtms} on interval
 \code{[0,TT]}.   
 }
@@ -37,12 +37,13 @@ mloglik1d(jtms, TT, nu, gcoef, Inu)
 
 }
 \details{
-  This version of the mloglik function uses external C code to speedup
-  the calculations. When given the analytical form of \code{Inu} or a
-  quickly calculatable \code{Inu}, it should be (substantially)
-  faster than \code{mloglik1a} when calculating the (minus log)
-  likelihood when the excitation function is exponential. Otherwise it
-  is the same as \code{mloglik0}, \code{mloglik1a}, \code{mloglik1b}. 
+  This function calculates the minus loglikelihood of the inhomegeneous
+  Hawkes model with background intensity function \eqn{\nu(t)} and
+  excitation kernel function \eqn{g(t)=\sum_{i=1}^{k} a_i e^{-b_i t}}
+  relative to continuous observation of the process from time 0 to time
+  \code{TT}. Like \code{mloglik1c}, it takes advantage of the Markovian 
+  property of the intensity process and uses external C++ code to speed
+  up the computation.  
 }
 
 \value{
@@ -52,7 +53,7 @@ mloglik1d(jtms, TT, nu, gcoef, Inu)
   Feng Chen <feng.chen@unsw.edu.au>
 }
 \seealso{
-  \code{mloglik0}, \code{mloglik1a} and \code{mloglik1b}
+  \code{mloglik1c}
 }
 
 \examples{

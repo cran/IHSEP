@@ -26,3 +26,11 @@ citEntry(
  textVersion="Chen, F. and Hall, P. (2016) Nonparametric estimation
  for self-exciting point processes -- A parsimonious approach. Journal
  of Computational and Graphical Statistics 25(1):209-224.")
+citEntry(
+ entry="Manual",
+ title="IHSEP: Inhomogeneous Self-Exciting Process", 
+ year="2021",
+ author="Feng Chen",
+ url="https://cran.r-project.org/package=IHSEP",
+ note="R package version 0.2",
+ textVersion="Chen, F. (2021) IHSEP: Inhomogeneous Self-Exciting Process. R package 0.2. https://CRAN.R-project.org/package=IHSEP")
