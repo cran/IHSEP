@@ -1,4 +1,4 @@
-6cbd799811b5a9035e9b6f036e831522 *DESCRIPTION
+158f1eedeaa2a4ea2ea59a01d63757b1 *DESCRIPTION
 d3f164980cd83ed061a3a88093a1c35b *NAMESPACE
 371fc3b4d19a2dbc360ff757ad3781bc *R/RcppExports.R
 648703ec3008b771c0df574a0b46e358 *R/mint.R
@@ -6,7 +6,7 @@ d3f164980cd83ed061a3a88093a1c35b *NAMESPACE
 1a4202aabd7faeb23f8defc8d3e93b8e *R/mloglik1a.R
 9df21f79628bbec7fffff8c00631d5cb *R/mloglik1b.R
 434004d101dacab9b259a02415217a5b *R/sepp.resid.R
-3b9cc309f317290d4e953bda06486544 *R/simHawkes.R
+d762cb64db07c96a4f78586bd770bc02 *R/simHawkes.R
 090b5ab6aa65fabaa26c7d7bfa87c2c3 *R/simHawkes0.R
 ca8417c319f98525de5b133b0a9f5a79 *R/simHawkes1.R
 40780a90b90aca467d2ea61c6b8fd158 *R/simPois.R
@@ -30,8 +30,8 @@ f3ba29ce7336e7f6015f93a062769e27 *man/simHawkes1.Rd
 b62201d1827d663f77d95a7daf015ddf *man/simHawkes1a.Rd
 f026e43cb317232e818eb02c3076b54b *man/simPois.Rd
 6b5981487b1a197d48a740a53a693552 *man/simPois0.Rd
-e4a476eb76f93d463a9a810fbb52b28f *man/simchildren.Rd
-c598b7a5da5728cd394489ea02957257 *man/simoffspring.Rd
+40e96bd2128beb7b8e89e3d60b4b446e *man/simchildren.Rd
+78d0fef381bd0bf01e5e257dd01d5497 *man/simoffspring.Rd
 accb1618667195c6d8f4f9af65268681 *src/RcppExports.cpp
 3baaa05de7ab414c5cf7a7b3fd067064 *src/init.c
 6f8bb023e0c9772aa6c0d86bb491783d *src/mloglik.c

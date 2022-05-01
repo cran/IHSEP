@@ -8,7 +8,7 @@ of all generations spawned from an event relative the birth time of
 the parent event. This function is to be called by the simulator
 function for Hawkes processes and is not meant for external use.}
 \usage{
-simoffspring(br = 0.5, dis = "exp", par.dis = list(rate = 1))
+simoffspring(br = 0.5, dis = "exp", par.dis = list(rate = 1), cens = Inf, sorted = TRUE)
 }
 \arguments{
 \item{br}{numerical scalar in [0,1), the branching ratio, or the
@@ -22,6 +22,14 @@ etc.}
 
 \item{par.dis, }{list, which gives the values of the (named)
 parameter(s) of the child birthtime distribution)}
+
+\item{cens, }{numeric scalar, which gives the censoring time
+  (termination of observation time). The default value of Inf means no
+  censoring. }
+
+\item{sorted, }{boolean scalar, which indicates whether the out child
+  birth times should be sorted or not.  The default value is TRUE. }
+
 }
 \value{
 a numeric vector of giving the birth times of offspring

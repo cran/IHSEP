@@ -14,6 +14,12 @@
 #'     etc.
 #' @param par.dis, list, which gives the values of the (named)
 #'     parameter(s) of the child birthtime distribution)
+#' @param cens, numeric scalar in (0,Inf], which gives the censoring
+#'     time for the (Poisson) process for birth times of children. The
+#'     default of cens=Inf means no censoring.
+#' @param sorted, boolean, which indicated whether the birth times
+#'     should be sorted or not. The default is TRUE, which means the
+#'     output birth times will be sorted to ascending order.
 #' @return a numeric vector of length giving the birth times of child
 #'     events relative to the parent event in ascending order
 #' @seealso \code{\link{simoffspring}}
@@ -21,10 +27,12 @@
 #'   simchildren(br=0.9,dis="exp",par.dis=list(rate=1))
 
 simchildren <- 
-  function(br=0.5,dis="exp",par.dis=list(rate=1)){
+  function(br=0.5,dis="exp",par.dis=list(rate=1),cens=Inf,sorted=TRUE){
   N <- rpois(1,br)
   if(N==0)return(numeric(0))
-  sort(do.call(paste0("r",dis),c(list(n=N),par.dis)))
+  tmp <- do.call(paste0("r",dis),c(list(n=N),par.dis))
+  if(cens<Inf)tmp <- tmp[tmp<=cens]
+  if(sorted)sort(tmp) else tmp
 }
 
 
@@ -44,6 +52,14 @@ simchildren <-
 #'     etc.
 #' @param par.dis, list, which gives the values of the (named)
 #'     parameter(s) of the child birthtime distribution)
+#' @param cens, numerical scalar in (0,Inf], which gives the censoring
+#'     time to terminate observation of the process of offspring birth
+#'     times
+#' @param sorted, boolean, which indicates whether the output
+#'     offspring birth times should be sorted or not. The default
+#'     value TRUE means the output times will be sorted to ascending
+#'     order.
+
 #' @return a numeric vector of giving the birth times of offspring
 #'     events of all generations relative to the parent's birth time
 #'     in ascending order
@@ -56,19 +72,29 @@ simchildren <-
 #' @examples
 #'   simoffspring(br=0.9,dis="exp",par.dis=list(rate=1))
 
-
-simoffspring <- 
-    function(br=0.5,dis="exp",par.dis=list(rate=1)){
-    tms <- simchildren(br=br,dis=dis,par.dis=par.dis)
-    gs <- length(tms)
+simoffspring <- function(br=0.5,dis="exp",par.dis=list(rate=1),cens=Inf,sorted=TRUE){
+    tms <- list()
+    ng <- 0;
+    tmp <- simchildren(br=br,dis=dis,par.dis=par.dis,cens=cens,sorted=FALSE)
+    gs <- length(tmp)
     if(gs==0)return(numeric(0));
-    tmp <- sapply(tms,
-                  function(x){
-                      c(x,x+simoffspring(br=br,dis=dis,
-                                         par.dis=par.dis))
-                  })
-    sort(unlist(tmp))
+    while(gs>0){
+        ng <- ng+1
+        tms[[ng]] <- tmp
+        tmp <- unlist(sapply(tmp,
+                             function(x){
+                                 x+simchildren(br=br,dis=dis,
+                                               par.dis=par.dis,
+                                               cens=cens-x,
+                                               sorted=FALSE)
+                             }))
+        gs <- length(tmp)
+    }
+    tms <- unlist(tms)
+    if(sorted)sort(tms) else tms
 }
+
+
 
 #' Simulate an (inhomogeneous) Hawkes self-exciting process
 
@@ -89,14 +115,13 @@ simoffspring <-
 #'     distribution; 'd${dis}' gives the density function \eqn{g(\cdot)}. 
 #' @param par.dis, a (named) list giving the values of the parameters of the child birthtime distribution. 
 #' @return a vector giving the event times of an inhomogeneous Hawkes process up to the censoring time in ascending order.
-simHawkes1a <-
-  function(nu=function(x)rep(100,length(x)),cens=1,
-           nuM=max(optimize(nu,c(0,cens),maximum=TRUE)$obj,
-             nu(0),nu(cens),.Machine$double.eps^0.5)*1.1,
-           br=0.5, dis="exp",par.dis=list(rate=1)){
+simHawkes1a <- function(nu=function(x)rep(100,length(x)),cens=1,
+                        nuM=max(optimize(nu,c(0,cens),maximum=TRUE)$obj,
+                                nu(0),nu(cens),.Machine$double.eps^0.5)*1.1,
+                        br=0.5, dis="exp",par.dis=list(rate=1)){
     tms.g0 <- simPois(nu,cens=cens,int.M=nuM)
-    tms <- sapply(tms.g0,function(x)c(x,x+simoffspring(br,dis,par.dis)))
+    tms <- sapply(tms.g0,function(x)c(x,x+simoffspring(br,dis,par.dis,cens=cens-x,sorted=FALSE)))
     tms <- unlist(tms)
     tms <- tms[tms<=cens]
     sort(tms)
-  }
+}
