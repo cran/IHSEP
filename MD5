@@ -1,7 +1,7 @@
-158f1eedeaa2a4ea2ea59a01d63757b1 *DESCRIPTION
+fd7aa170c12eb7dbcfca2e81300bd9e1 *DESCRIPTION
 d3f164980cd83ed061a3a88093a1c35b *NAMESPACE
 371fc3b4d19a2dbc360ff757ad3781bc *R/RcppExports.R
-648703ec3008b771c0df574a0b46e358 *R/mint.R
+bf57817a14ab083f4fc0bfe6c3dcd1d7 *R/mint.R
 55f31ccc1dc1bc4708d8608ebb540b81 *R/mloglik0.R
 1a4202aabd7faeb23f8defc8d3e93b8e *R/mloglik1a.R
 9df21f79628bbec7fffff8c00631d5cb *R/mloglik1b.R
@@ -11,13 +11,13 @@ d762cb64db07c96a4f78586bd770bc02 *R/simHawkes.R
 ca8417c319f98525de5b133b0a9f5a79 *R/simHawkes1.R
 40780a90b90aca467d2ea61c6b8fd158 *R/simPois.R
 c869a1f575dacf2699b7e27a17558b3b *R/simPois0.R
-d297d3c8930d844a8d5efcb03ba011a1 *data/asep.rda
-697e264eb9fd13299d7d0158574974ac *inst/CITATION
+3706b422c4772cdbce948283975e3dea *data/asep.rda
+00bead204b1fe811c5853f6c5c510149 *inst/CITATION
 10136d9742aba68a868acc1a8906b3ba *man/IHSEP-package.Rd
 f110681a43f8cbe09946df7f63417f1e *man/asep.Rd
 57d58003fc87b96add0454c0aa77c629 *man/conv.seq.Rd
-e6361f57f9b66708605af2afe495d8d2 *man/h.fn.Rd
-556d13cc7bb4a6d1b4cc003967d6c991 *man/h.fn.exp.Rd
+6c46f0617cb91d27ad0b89e0e6adc66d *man/h.fn.Rd
+36a511f3c92e85ca0971a76db61f6c33 *man/h.fn.exp.Rd
 eb0facf0f210f4d61c9454599b183875 *man/mloglik0.Rd
 0cd659e74cdccc23043cf63debcb5ae8 *man/mloglik1a.Rd
 75fc515ec183e852e2d80adda902896f *man/mloglik1b.Rd

@@ -2,8 +2,14 @@
 % Please edit documentation in R/mint.R
 \name{h.fn.exp}
 \alias{h.fn.exp}
-\title{Mean Intensity of the Self-Exciting Point Process With an Exponential Excitation Function
-\code{h.fn.exp} calculates the mean intensity function \eqn{h(t)} which solves the integral equation \deqn{h(t)=\nu(t)+\int_0^t g(t-s)h(s)ds, t\geq 0}, where the excitation function is exponential: \eqn{g(t)= \gamma_1 e^{-\gamma_2 t}}.}
+\title{Mean Intensity of the Self-Exciting Point Process With an
+  Exponential Excitation Function}
+\description{
+\code{h.fn.exp} calculates the mean intensity function \eqn{h(t)} which
+solves the integral equation \deqn{h(t)=\nu(t)+\int_0^t g(t-s)h(s)ds,
+  t\geq 0}, where the excitation function is exponential: \eqn{g(t)=
+  \gamma_1 e^{-\gamma_2t}}.
+}
 \usage{
 h.fn.exp(x, nu, g.p = c(4, 8))
 }
@@ -16,10 +22,6 @@ h.fn.exp(x, nu, g.p = c(4, 8))
 }
 \value{
 a numric scalar which gives the value of the function \eqn{h} at \code{x}.
-}
-\description{
-Mean Intensity of the Self-Exciting Point Process With an Exponential Excitation Function
-\code{h.fn.exp} calculates the mean intensity function \eqn{h(t)} which solves the integral equation \deqn{h(t)=\nu(t)+\int_0^t g(t-s)h(s)ds, t\geq 0}, where the excitation function is exponential: \eqn{g(t)= \gamma_1 e^{-\gamma_2 t}}.
 }
 \examples{
 nu <- function(x)200+100*cos(pi*x);

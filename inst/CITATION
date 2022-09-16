@@ -32,5 +32,5 @@ citEntry(
  year="2021",
  author="Feng Chen",
  url="https://cran.r-project.org/package=IHSEP",
- note="R package version 0.2",
- textVersion="Chen, F. (2021) IHSEP: Inhomogeneous Self-Exciting Process. R package 0.2. https://CRAN.R-project.org/package=IHSEP")
+ note="R package version 0.3.1",
+ textVersion="Chen, F. (2022) IHSEP: Inhomogeneous Self-Exciting Process. R package 0.3.1. https://CRAN.R-project.org/package=IHSEP")

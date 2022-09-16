@@ -47,11 +47,11 @@ h.fn.exp <- function(x,nu,g.p=c(4,8)){
 #' @param abs.tol a numeric scalar specifying the absolute tolerance of error
 #' @param maxit an integer specifying the maximal number of iterations allowed
 #' @return a list with elelents, \code{x}: the vector of the points where \eqn{h} is evaluated; \code{y}: the vector of the corresponding \eqn{h} values; \code{nit}: the number of iterations used; \code{G.err}: the approximation error in \eqn{G}. 
-#' @seealso \code{\link{h.fn1}}
+#' @seealso \code{\link{h.fn.exp}}
 #' @examples
 #' nu <- function(x)(200+100*cos(pi*x))*(x>=0);
 ## g <- function(x)2*exp(-x)*(x>=0)
-#' h.l <- h.fn1(nu=nu,g=g,from=0,to=5);
+#' h.l <- h.fn(nu=nu,g=g,from=0,to=5);
 #' h1 <- splinefun(h.l$x,h.l$y);
 #' round(nu(x)+sapply(x,function(x)integrate(function(u)g(x-u)*h(u),0,x)$value) - h1(x),5)
 

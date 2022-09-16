@@ -2,8 +2,14 @@
 % Please edit documentation in R/mint.R
 \name{h.fn}
 \alias{h.fn}
-\title{Mean Intensity Function of the Self-Exciting Point Process
-\code{h.fn} calculate the values of the mean intensity function of the self-exciting process with given baseline event rate and excitation function at a (fairly large) number of points. Values of the function at other points can be obtained by interpolation (e.g. spline interpolation).}
+\title{Mean Intensity Function of the Self-Exciting Point Process}
+\description{
+\code{h.fn} calculate the values of the mean intensity function of the
+self-exciting process with given baseline event rate and excitation
+function at a (fairly large) number of points. Values of the function at
+other points can be obtained by interpolation (e.g. spline
+interpolation).
+}
 \usage{
 h.fn(nu, g, N = 2^12, to = 1, abs.tol = 1e-10, maxit = 100)
 }
@@ -22,10 +28,6 @@ h.fn(nu, g, N = 2^12, to = 1, abs.tol = 1e-10, maxit = 100)
 }
 \value{
 a list with elelents, \code{x}: the vector of the points where \eqn{h} is evaluated; \code{y}: the vector of the corresponding \eqn{h} values; \code{nit}: the number of iterations used; \code{G.err}: the approximation error in \eqn{G}.
-}
-\description{
-Mean Intensity Function of the Self-Exciting Point Process
-\code{h.fn} calculate the values of the mean intensity function of the self-exciting process with given baseline event rate and excitation function at a (fairly large) number of points. Values of the function at other points can be obtained by interpolation (e.g. spline interpolation).
 }
 \examples{
 \dontrun{
